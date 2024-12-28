@@ -1,6 +1,6 @@
 body {
     font-family: 'Pinyon Script', serif;
-    background-image: url(../img/fondo.jpeg);
+    background-image: url("../img/fondo.jpeg");
     animation: fall 30s linear infinite;
     background-size: contain;
     color: #fff;
@@ -14,15 +14,17 @@ body {
 
 
 .container {
-    width: 100%;
-    max-width: 90%; /* Máximo 90% del ancho disponible */
+    width:  90%
+    max-width:100%;; /* Máximo 90% del ancho disponible */
     min-width: 320px; /* Evita que sea demasiado pequeño */
     margin: auto;
-    padding: 20px;
+    padding: 15px;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
     font-size: 2rem;
+    overflow: hidden; /* Esto también ayuda a contener el contenido */
+
 }
 
 
@@ -197,14 +199,21 @@ input[type="text"], input[type="email"], textarea {
 /* Adaptando tamaños */
 
 /* Estilos del formulario de Google */
-
-form {
+/* Estilos del iframe (Formulario de Google) */
+iframe {
     width: 100%;
-    max-width: 100%; /* Evita desbordamientos */
-    overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal */
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+    max-width: 100%; /* Asegura que no desborde */
+    height: auto; /* Ajusta la altura para que se respete la proporción */
+    border: none; /* Elimina bordes adicionales */
+    margin: 0 auto; /* Centra el iframe */
+    display: block;
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    iframe {
+        height: 70vh; /* Ajusta la altura del iframe al 70% de la altura visible en pantallas pequeñas */
+    }
 }
 
 
